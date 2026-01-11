@@ -192,9 +192,31 @@ setInterval(()=>{
                "September","Oktober","November","Desember"]
   const n=new Date()
   tanggalDisplay.textContent=`${h[n.getDay()]}, ${n.getDate()} ${b[n.getMonth()]} ${n.getFullYear()}`
-  hijriDisplay.textContent=new Intl.DateTimeFormat(
-    "id-ID-u-ca-islamic",{day:"numeric",month:"long",year:"numeric"}
-  ).format(n).replace("AH","H")
+
+
+  
+ const hijriMonths = [
+  "Muharram","Safar","Rabiul Awal","Rabiul Akhir",
+  "Jumadil Awal","Jumadil Akhir",
+  "Rajab","Syaban","Ramadhan",
+  "Syawal","Dzulqaidah","Dzulhijjah"
+];
+
+const d = new Date();
+
+const fmt = new Intl.DateTimeFormat(
+  'id-US-u-ca-islamic-umalqura',
+  { day:'numeric', month:'numeric', year:'numeric', weekday:'long' }
+);
+
+const parts = fmt.formatToParts(d);
+const day = parts.find(p=>p.type==='day').value;
+const month = parts.find(p=>p.type==='month').value;
+const year = parts.find(p=>p.type==='year').value;
+const weekday = parts.find(p=>p.type==='weekday').value;
+
+document.getElementById("hijriDisplay").innerHTML =
+  `${weekday}, ${day} ${hijriMonths[month-1]} ${year} H`;
 },1000)
 /* HARI BESAR ISLAM */
 const hariBesar=[
