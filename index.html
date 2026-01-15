@@ -63,14 +63,16 @@
   background:rgba(0,0,0,.55);
   padding:12px 14px;
   border-radius:12px;
-  right: 20px;
-  max-width:500px;
+  right: 5px;
+  position: fixed;
+  max-width:300px;
   margin:10px auto;
   font-size:1rem;
   font-weight:600;
   text-align:right;
   color:#ffd966;
 }
+
 
 
 
@@ -255,7 +257,7 @@ const year = parts.find(p=>p.type==='year').value;
 const weekday = parts.find(p=>p.type==='weekday').value;
 
 document.getElementById("hijriDisplay").innerHTML =
-  `${weekday}, ${day} ${hijriMonths[month-1]} ${year} H`;
+  `${day} ${hijriMonths[month-1]} ${year} H`;
 },1000)  
 
 
