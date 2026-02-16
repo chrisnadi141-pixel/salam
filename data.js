@@ -41,7 +41,7 @@ setInterval(() => {
 
   const list = [
     {n:"Subuh",t:jadwal.subuh},
-    {n:"Zuhur",t:jadwal.dzuhur},
+    {n:"Dzuhur",t:jadwal.dzuhur},
     {n:"Asar",t:jadwal.ashar},
     {n:"Maghrib",t:jadwal.maghrib},
     {n:"Isya",t:jadwal.isya}
@@ -82,6 +82,7 @@ setInterval(() => {
   }
 
 }, 1000)
+
 
 
 
