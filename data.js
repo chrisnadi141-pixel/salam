@@ -5,7 +5,7 @@
 let jadwal = null
 let sudahAdzan = {
   Subuh:false,
-  Zuhur:false,
+  Dzuhur:false,
   Asar:false,
   Maghrib:false,
   Isya:false
@@ -82,6 +82,7 @@ setInterval(() => {
   }
 
 }, 1000)
+
 
 
 
